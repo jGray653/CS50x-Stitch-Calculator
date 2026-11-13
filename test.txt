@@ -1,0 +1,18 @@
+test
+==================================
+  DMC 123                    3.00
+   Stitches: 3000
+   Skeins: 2
+  DMC blanc                    4.50
+   Stitches: 4000
+   Skeins: 3
+  DMC 666                    1.50
+   Stitches: 208
+   Skeins: 1
+  DMC 104                    10.50
+   Stitches: 11000
+   Skeins: 7
+==================================
+Total Stitches: 18208
+Total Skeins: 13
+Total Cost: 19.50
