@@ -44,18 +44,23 @@ Once this is done, the user is moved to the **Results** function. All this funct
 The calculator function works out how many skeins is needed for a given color. It takes the amount of stitches, and the constants per_stitch, waste, strands_used, and skein_length to work this out.
 The first calculation is how much thread is needed for the total stitches. This is worked out with this equation:
 > length = (stitches * PER_STITCH) + WASTE
+
 Then, to find out the usable length of a whole skein. This changes depending on how many threads are worked with at a time. This is the equation:
 > skeinLength = STRANDS_USED * SKEIN_LENGTH
+
 And then, finally, how many skeins will be needed to cover the total length needed.
 > skeins = length/skeinLength
+
 To get the amount of skeins needing to be purchased, this number is rounded up using the **math** library:
 > skeins = math.ceil(skeins)
+
 This final number is returned to the **create** function.
 
 #### Open Project
 The purpose of this function is to list the avaliable files to read from and let the user select one to look at. It achieves this by using the **os** library.
 This is done with the following function:
 > os.listdir()
+
 The program looks at all of the items in the directory, and only lists the ones that end in .txt as that is the chosen format for the projects to be listed as. This is alongside a number that the user can input.
 Accepting this input is the same as before, where if the number is not in the options, or if the user inputs a non-numerical digit, an error is raised and the user is reprompted to input an answer.
 If there are no projects to choose from, the user is asked if they would like to create a project instead. Selecting yes on this question directs the user to the **create** function. Selecting no ends the program. Inputting anything else informs the user that they have made an invalid selection, and the program ends.
@@ -67,6 +72,7 @@ It also raises errors in the same places, and follows the same structure.
 The only difference is that upon selecting a valid project to delete, the user is asked if they are sure they wish to delete the selected project.
 When the user selects yes, the item is deleted using:
 > os.remove(projects[choice - 1])
+
 the reason for choice - 1 is because the user may select the 1st entry in a list, but it is actually listed as item 0 in the list, since the computer counts from 0.
 Selecting no results in the program ending.
 Making an invalid selection results in the function restarting so a valid selection may be made.
